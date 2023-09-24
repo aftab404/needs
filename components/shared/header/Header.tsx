@@ -7,15 +7,15 @@ import Searchbar from "./Searchbar";
 import { ShoppingCart } from "lucide-react";
 import Profiledrop from "./Profiledrop";
 
-
-
 export default async function Header() {
   const session = await getServerSession(options);
 
   return (
     <nav className=" flex justify-between items-center px-9 py-3 bg-slate-100 dark:bg-slate-900">
       <div className="flex gap-5 items-center w-full">
-        <p className="font-bold text-2xl">Needs.</p>
+        <Link href="/">
+          <p className="font-bold text-2xl">Needs.</p>
+        </Link>
 
         <Searchbar />
       </div>

@@ -5,7 +5,7 @@ export interface Catergory {
 }
 
 export const categories : Catergory[] = [
-    {name : 'Smartphone', url : '/phone.jpg'},
+    {name : 'Smartphones', url : '/phone.jpg'},
     {name : 'Groceries', url : '/grocery.jpg'},
     {name : 'Furniture', url : '/furniture.jpeg'},
     {name : 'Fashion', url : '/fashion.jpg'},
