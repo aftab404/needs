@@ -4,15 +4,26 @@ import getProducts from "@/lib/getProducts"
 
 
 
+export default async function page(props: any) {
 
+    
+  const { products } = await getProducts(props.params.cat)
+  const searchTerm = props.searchParams.search
 
-export default async function page({params} : {params: {cat: string}}) {
+  let filteredProducts;
 
-  const { products } = await getProducts(params.cat)
+  if(searchTerm) {
+    filteredProducts = products.filter((product: any) => {
+        return product.title.toLowerCase().includes(searchTerm.toLowerCase())
+    })
+    } else {
+        filteredProducts = products
+    }
+
 
   return (
     <div className="flex justify-center gap-3 p-4 flex-wrap w-full">
-      {products.map((product: any) => (
+      {filteredProducts.map((product: any) => (
         <Product product={product}/>
       ))}
     </div>
