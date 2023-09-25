@@ -23,8 +23,8 @@ export default async function page(props: any) {
 
   return (
     <div className="flex justify-center gap-3 p-4 flex-wrap w-full mt-8">
-      {filteredProducts.map((product: any) => (
-        <Product product={product}/>
+      {filteredProducts.map((product: Product) => (
+        <Product key={product.id} product={product}/>
       ))}
     </div>
   );

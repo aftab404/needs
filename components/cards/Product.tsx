@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -9,25 +11,17 @@ import {
 
 import Image from "next/image";
 import { Button } from "../ui/button";
+import { addToCart } from "@/lib/useCart";
 
 
-interface Product {
-    id: number;
-    title: string;
-    description: string;
-    price: number;
-    discountPercentage: number;
-    rating: number;
-    stock: number;
-    brand: string;
-    category: string;
-    thumbnail: string;
-    images: string[];
+export default function Product({ product }: { product: Product }) {
 
-}   
+ 
 
+  const handleClick = () => {
+    addToCart(product);
+  };
 
-export default function Product({product}: {product: Product} ) {
   return (
     <Card className="flex flex-col justify-between w-80">
       <CardHeader>
@@ -36,16 +30,16 @@ export default function Product({product}: {product: Product} ) {
       </CardHeader>
       <CardContent>
         <Image
-            src={product.thumbnail}
-            alt={product.title}
-            width={256}
-            height={256}
-            className="rounded-xl" 
-            ></Image>
+          src={product.thumbnail}
+          alt={product.title}
+          width={256}
+          height={256}
+          className="rounded-xl"
+        ></Image>
       </CardContent>
       <CardFooter className="flex justify-between items-center">
         <p className="font-bold ">${product.price}</p>
-        <Button >Add to Cart</Button>
+        <Button onClick={handleClick}>Add to Cart</Button>
       </CardFooter>
     </Card>
   );
