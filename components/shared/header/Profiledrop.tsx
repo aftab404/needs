@@ -9,15 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 
-interface Prop {
-  user: {
-    name: string;
-    email: string;
-    image: string;
-  };
-}
-
-export default function Profiledrop({ user }: Prop) {
+export default function Profiledrop({ user }: any) {
   return (
     <div>
       <DropdownMenu>

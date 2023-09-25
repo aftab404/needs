@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 
 import Image from "next/image";
+import { Button } from "../ui/button";
 
 
 interface Product {
@@ -40,11 +41,11 @@ export default function Product({product}: {product: Product} ) {
             width={256}
             height={256}
             className="rounded-xl" 
-
             ></Image>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="flex justify-between items-center">
         <p className="font-bold ">${product.price}</p>
+        <Button >Add to Cart</Button>
       </CardFooter>
     </Card>
   );

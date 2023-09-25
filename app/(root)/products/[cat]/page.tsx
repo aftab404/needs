@@ -22,7 +22,7 @@ export default async function page(props: any) {
 
 
   return (
-    <div className="flex justify-center gap-3 p-4 flex-wrap w-full">
+    <div className="flex justify-center gap-3 p-4 flex-wrap w-full mt-8">
       {filteredProducts.map((product: any) => (
         <Product product={product}/>
       ))}

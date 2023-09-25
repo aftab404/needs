@@ -30,9 +30,11 @@ export default async function Header() {
           </Link>
         )}
 
-        <Button variant={"outline"}>
-          <ShoppingCart />
-        </Button>
+        <Link href={"/cart"}>
+          <Button variant={"outline"}>
+            <ShoppingCart />
+          </Button>
+        </Link>
 
         <div className="ml-2">
           {session && <Profiledrop user={session?.user} />}
